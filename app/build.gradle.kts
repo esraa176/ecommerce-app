@@ -56,4 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Json Parser
+    implementation (libs.gson)
+
+    // Networking
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+    // Logging Interceptor
+    implementation (libs.logging.interceptor)
 }
