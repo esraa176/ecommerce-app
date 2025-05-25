@@ -66,4 +66,7 @@ dependencies {
 
     // Logging Interceptor
     implementation (libs.logging.interceptor)
+
+    // Coil for image loading
+    implementation(libs.coil.compose)
 }

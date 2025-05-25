@@ -24,10 +24,12 @@ class JokyViewModel(private val repository: JokyRepository) : ViewModel() {
         viewModelScope.launch {
             uiState = UiState.Loading
             try {
-                uiState = UiState.Success(repository.getProducts())
+                val list = repository.getProducts()
+                uiState = UiState.Success(list)
+                Log.i("my logs", "##### getProducts: ${list.size}")
             } catch (e: Exception){
                 e.printStackTrace()
-                Log.i("", "##### getProducts: ${e.localizedMessage ?: "Unknown Error"}")
+                Log.i("my logs", "##### getProducts: ${e.localizedMessage ?: "Unknown Error"}")
                 uiState = UiState.Error("Error. Please try again")
             }
         }
